@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Movement : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class Movement : MonoBehaviour
 
     private float verticalVelocity = 0.0f;              // Vertical velocity for jumping and falling
     private CharacterController characterController;   // Reference to CharacterController component
+
+    public TMP_Text text;
 
     // Start is called before the first frame update
     void Start()
@@ -41,5 +44,11 @@ public class Movement : MonoBehaviour
 
         // Move the character
         characterController.Move(moveDirection * Time.deltaTime);
+
+        if(characterController.isGrounded && verticalVelocity < 0)
+        {
+            verticalVelocity = 0;
+        }
+        text.text = "speed:" + Mathf.Round(verticalVelocity);
     }
 }
