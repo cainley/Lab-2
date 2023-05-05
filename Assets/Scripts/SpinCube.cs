@@ -15,7 +15,7 @@ public class SpinCube : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(new Vector3(spinningX, 1, 1), 50 * Time.deltaTime);
+        transform.Rotate(new Vector3(spinningX, 0, 0), 50 * Time.deltaTime);
     }
 
     public void ToggleSpinX(bool spin)
