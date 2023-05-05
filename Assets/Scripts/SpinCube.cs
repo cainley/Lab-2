@@ -24,7 +24,7 @@ public class SpinCube : MonoBehaviour
         {
             spinningX = 5f;
         }
-        else
+        else if (spin == false)
         {
             spinningX = 0f;
         }
